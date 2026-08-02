@@ -1,69 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Younus Ali | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Younus Ali | VS Code Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- FontAwesome for VS Code-like icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- JavaScript loaded with defer for performance and non-blocking rendering -->
+  <script src="script.js" defer></script>
 </head>
 <body>
 
-    <!-- Custom Glowing Mouse Cursor -->
-    <div class="cursor-dot" data-cursor-dot></div>
-    <div class="cursor-outline" data-cursor-outline></div>
+  <!-- Glowing Custom Cursor (Hidden from Assistive Technologies) -->
+  <div class="custom-cursor" aria-hidden="true"></div>
+  <div class="custom-cursor-glow" aria-hidden="true"></div>
 
-    <!-- Animated Background -->
-    <div class="background-animation"></div>
+  <!-- Background Animated Moving Gradient -->
+  <div class="bg-gradient-animation" aria-hidden="true"></div>
 
-    <!-- Navigation Bar -->
-    <nav class="glass-panel">
-        <h2 class="logo">YA.</h2>
-        <div class="menu-toggle" id="mobile-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <ul id="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#work">Operations & Work</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <!-- Header / Hero Section -->
-    <header class="glass-panel hero fade-in">
-        <img src="profile.png" alt="Younus Ali" class="profile-img">
-        <h1>Younus Ali</h1>
-        <p class="subtitle">Global Verification & Compliance Operations</p>
+  <!-- Main VS Code Window Shell -->
+  <main class="vscode-window glass-panel">
+    
+    <!-- Title Bar / Window Controls -->
+    <header class="vscode-titlebar">
+      <div class="window-controls" aria-hidden="true">
+        <span class="dot close"></span>
+        <span class="dot minimize"></span>
+        <span class="dot maximize"></span>
+      </div>
+      <div class="current-file-title">younus-ali-portfolio - Visual Studio Code</div>
+      <button class="hamburger-menu-btn" id="sidebar-toggle" aria-label="Toggle Explorer" aria-expanded="false" aria-controls="vscode-sidebar">
+        <i class="fas fa-bars"></i>
+      </button>
     </header>
 
-    <!-- About Section -->
-    <section id="about" class="glass-panel fade-in">
-        <h2>About Me</h2>
-        <p>I specialize in managing complex, international verification cases and sourcing localized field agents across the globe. By establishing strict compliance protocols and standardized workflows, I ensure seamless global site visits and accurate data processing.</p>
-        
-        <blockquote class="poetry-quote">
-            "Speak, for your lips are free; <br>
-            Speak, your tongue is still your own." <br>
-            <span>— A reminder of the power of truth and verification.</span>
-        </blockquote>
-    </section>
-
-    <!-- Case Studies / Operations Section -->
-    <section id="work" class="glass-panel fade-in">
-        <h2>Case Studies & Operations</h2>
-        <div id="projects-container" class="grid-layout">
-            <!-- Dynamically loaded from projects.json -->
+    <div class="vscode-workspace">
+      
+      <!-- 1. Activity Bar (Far Left Icon strip) -->
+      <nav class="vscode-activitybar" aria-label="Active Sidebar Sections">
+        <div class="activity-top">
+          <div class="activity-icon active" data-tooltip="Explorer" role="button" tabindex="0" aria-label="Open File Explorer">
+            <i class="far fa-copy"></i>
+          </div>
+          <div class="activity-icon" data-tooltip="Search" role="button" tabindex="0" aria-label="Search Workspace">
+            <i class="fas fa-search"></i>
+          </div>
+          <div class="activity-icon" data-tooltip="Source Control" role="button" tabindex="0" aria-label="Source Control Git Management">
+            <i class="fab fa-git-alt"></i>
+          </div>
+          <div class="activity-icon" data-tooltip="Extensions" role="button" tabindex="0" aria-label="Extensions Directory">
+            <i class="fas fa-cubes"></i>
+          </div>
         </div>
-    </section>
+        <div class="activity-bottom">
+          <div class="activity-icon" data-tooltip="Settings" role="button" tabindex="0" aria-label="Settings Menu">
+            <i class="fas fa-cog"></i>
+          </div>
+        </div>
+      </nav>
 
-    <!-- Contact Section -->
-    <section id="contact" class="glass-panel fade-in">
-        <h2>Get In Touch</h2>
-        <p>Interested in collaborating or discussing global verification strategies? Reach out directly to connect.</p>
-        <a href="mailto:your-email@example.com" class="contact-btn">Send an Email</a>
-    </section>
+      <!-- 2. Sidebar Panel (File Explorer) -->
+      <aside class="vscode-sidebar" id="vscode-sidebar" aria-label="File Explorer">
+        <div class="sidebar-title">
+          <span>EXPLORER</span>
+          <i class="fas fa-ellipsis-h" aria-hidden="true"></i>
+        </div>
+        
+        <div class="explorer-section">
+          <div class="explorer-header">
+            <i class="fas fa-chevron-down fold-icon" aria-hidden="true"></i>
+            <span class="folder-name">YOUNUS_ALI</span>
+          </div>
+          <ul class="file-list" role="tree" aria-label="Workspace Files">
+            <li class="file-item active" data-file="about" role="treeitem" tabindex="0" aria-selected="true" aria-label="Open About Me Markdown Document">
+              <i class="fab fa-markdown md-icon" aria-hidden="true"></i> About_Me.md
+            </li>
+            <li class="file-item" data-file="skills" role="treeitem" tabindex="0" aria-selected="false" aria-label="Open Skills Stylesheet Document">
+              <i class="fab fa-css3-alt css-icon" aria-hidden="true"></i> Skills.css
+            </li>
+            <li class="file-item" data-file="experience" role="treeitem" tabindex="0" aria-selected="false" aria-label="Open Experience Script Document">
+              <i class="fab fa-js-square js-icon" aria-hidden="true"></i> Experience.js
+            </li>
+            <li class="file-item" data-file="projects" role="treeitem" tabindex="0" aria-selected="false" aria-label="Open Operations and Artificial Intelligence JSON Document">
+              <i class="fas fa-database json-icon" aria-hidden="true"></i> Operations_AI.json
+            </li>
+            <li class="file-item" data-file="contact" role="treeitem" tabindex="0" aria-selected="false" aria-label="Open Contact Bash Script Document">
+              <i class="fas fa-envelope contact-icon" aria-hidden="true"></i> Contact.sh
+            </li>
+          </ul>
+        </div>
+      </aside>
 
-    <script src="script.js"></script>
+      <!-- 3. Main Editor Panel -->
+      <section class="vscode-editor-pane" aria-label="Code Editor Window">
+        
+        <!-- Tabbed Navigation Bar -->
+        <header class="editor-tabs-bar" id="tabs-container" role="tablist" aria-label="Open Editor Tabs">
+          <!-- Active tabs will render here dynamically via JavaScript -->
+        </header>
+
+        <!-- Dynamic File Window -->
+        <article class="editor-content-viewport">
+          <div class="line-numbers" id="line-numbers" aria-hidden="true">
+            <!-- Line numbers generated via JavaScript -->
+          </div>
+          
+          <div class="editor-code-container" id="editor-code" tabindex="0" role="textbox" aria-readonly="true" aria-label="Code Editor Content">
+            <!-- Dynamic File Content Renders Here -->
+          </div>
+        </article>
+
+      </section>
+
+    </div>
+
+    <!-- 4. VS Code Status Bar (Footer) -->
+    <footer class="vscode-statusbar">
+      <div class="status-left">
+        <span class="status-item bg-neon-accent"><i class="fas fa-code-branch" aria-hidden="true"></i> main*</span>
+        <span class="status-item"><i class="fas fa-sync-alt" aria-hidden="true"></i> Synchronized</span>
+      </div>
+      <div class="status-right">
+        <span class="status-item">Ln 1, Col 1</span>
+        <span class="status-item">Spaces: 2</span>
+        <span class="status-item">UTF-8</span>
+        <span class="status-item">HTML/CSS/JS</span>
+      </div>
+    </footer>
+
+  </main>
+
 </body>
 </html>

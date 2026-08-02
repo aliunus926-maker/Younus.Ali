@@ -1,14 +1,125 @@
-[
-    {
-        "title": "Global Field Sourcing Framework",
-        "description": "Deployed operational workflows to locate and contract localized independent field verification agents within specific geographic radiuses across multiple countries."
-    },
-    {
-        "title": "Large-Scale Verification Processing",
-        "description": "Managed candidate consent compliance protocols and processed complex data spreadsheets containing distinct verification cases."
-    },
-    {
-        "title": "Global Site Visit Coordination",
-        "description": "Developed specialized workflows to coordinate and oversee global site visits, ensuring absolute adherence to international compliance standards."
+{
+  "profile": {
+    "name": "Younus Ali",
+    "title": "Operations & Program Support Specialist",
+    "subtitles": [
+      "Verification & Process Coordination",
+      "Community Development",
+      "Workflow Automation"
+    ],
+    "contact": {
+      "phone": "+92 305 343 5324",
+      "email": "aliunus926@gmail.com",
+      "linkedin": "linkedin.com/in/aliunus",
+      "location": "Rawalpindi, Pakistan"
     }
-]
+  },
+  "competencies": {
+    "operations": ["Case Management & Verification", "Workflow Automation", "SOP / Technical Writing", "Process Improvement", "Compliance & Data Confidentiality"],
+    "program_ngo": ["Community Development", "Needs Assessment", "Monitoring & Evaluation (M&E)", "Stakeholder Engagement", "Climate Resilience & DRR"],
+    "coordination": ["Cross-Functional Coordination", "Remote Team & Freelancer Management", "Project Coordination", "Vendor Sourcing"],
+    "research_data": ["Qualitative & Quantitative Research", "Policy Analysis", "Google Sheets (Dashboards, Tracking)", "Data Reporting"],
+    "ai_tools": ["ChatGPT (Prompt Engineering & Workflows)", "DeepSeek", "LinkedIn Sourcing", "Canva"]
+  },
+  "experience": [
+    {
+      "role": "Assistant Operations Support",
+      "company": "De RISC Group",
+      "location": "Islamabad, Pakistan",
+      "period": "Oct 2025 - Present",
+      "responsibilities": [
+        "Initiate and manage partner verification cases end-to-end on the internal portal — reviewing candidate information, client remarks, and supporting documents in full compliance with data protection and confidentiality standards.",
+        "Maintain real-time case tracking dashboards and feasibility update sheets in Google Sheets, ensuring timely case progression and strict adherence to turnaround deadlines.",
+        "Serve as primary liaison between the Operations Team and Management, delivering structured updates on case status, feasibility outcomes, and escalation points.",
+        "Source, onboard, and brief freelance verification agents across low-coverage global regions via LinkedIn, country-specific networks, and professional directories; deliver clear, concise site-visit instructions, reporting protocols, and compliant data-handling briefings.",
+        "Draft and maintain operational SOPs, freelancer briefing documents, and task instruction templates to ensure consistency and quality across assignments."
+      ],
+      "key_achievements": [
+        "Built an AI-powered ChatGPT assistant that automates generation of task instructions, verification protocols, and freelancer briefing documents — significantly reducing manual preparation time per case.",
+        "Designed a DeepSeek-based location sourcing assistant that converted 800+ raw freelancer records into a structured, searchable database — accelerating source identification across hard-to-cover regions.",
+        "Reactivated 30–40 dormant high-value freelancers through advanced web research and alternative contact-discovery methods, directly expanding operational sourcing capacity."
+      ]
+    },
+    {
+      "role": "Sales Executive",
+      "company": "Baltistan Property Advisors & Construction Company",
+      "location": "Rawalpindi, Pakistan",
+      "period": "Dec 2023 - Aug 2025",
+      "responsibilities": [
+        "Managed end-to-end property sales operations and maintained a portfolio of active client relationships.",
+        "Generated qualified leads and closed deals through targeted social media marketing and public awareness campaigns.",
+        "Demonstrated strong negotiation, client communication, and consultative selling skills throughout the full sales cycle."
+      ],
+      "key_achievements": [
+        "Closed approximately 5 million PKR in property sales in 2024, contributing directly to company revenue targets."
+      ]
+    },
+    {
+      "role": "Public Relations Assistant",
+      "company": "Gilgit Baltistan Rural Support Program (GBRSP)",
+      "location": "Gilgit-Baltistan, Pakistan",
+      "period": "Apr 2021 - Sep 2021",
+      "responsibilities": [
+        "Supported community-driven development programs focused on social uplift, youth empowerment, and climate resilience across Gilgit-Baltistan.",
+        "Conducted community needs assessments including population data estimation to identify key social, economic, and developmental challenges.",
+        "Co-designed youth skill-enhancement initiatives aimed at improving employability and economic participation in rural areas.",
+        "Contributed to the Glacial Lake Outburst Flood (GLOF) disaster risk reduction project, supporting climate change adaptation planning and coordination.",
+        "Acted as liaison between project teams, local communities, indigenous organizations, and government bodies to ensure smooth implementation of program activities."
+      ],
+      "key_achievements": []
+    },
+    {
+      "role": "Volunteer Teacher",
+      "company": "Siksa Student Welfare Organization",
+      "location": "Khapalu, Pakistan",
+      "period": "Jul 2020 - Aug 2021",
+      "responsibilities": [
+        "Designed and delivered structured lesson plans for elementary-level students in core subjects, building foundational literacy and critical-thinking skills.",
+        "Collaborated with local educators and community members to promote access to education in an underserved community."
+      ],
+      "key_achievements": []
+    }
+  ],
+  "education": [
+    {
+      "degree": "Governance and Public Policy",
+      "institution": "National Defence University",
+      "location": "Islamabad",
+      "period": "2020 - 2024",
+      "details": "Relevant: Public Administration, Policy Analysis, Research Methods, Community Development"
+    },
+    {
+      "degree": "Engineering Science",
+      "institution": "Scienta Vision College",
+      "location": "Rawalpindi",
+      "period": "2017 - 2019",
+      "details": "Pre-Engineering academic foundation"
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Claude 101 — Introduction to AI with Claude",
+      "provider": "Anthropic",
+      "year": "2025",
+      "details": "Practical AI usage, prompt engineering & responsible AI workflows"
+    },
+    {
+      "title": "Google Project Management Certificate",
+      "provider": "Coursera",
+      "year": "In Progress",
+      "details": "Professional program covering Agile, Scrum, and project delivery frameworks"
+    },
+    {
+      "title": "PMD Pro (Project Management for Development Professionals)",
+      "provider": "PM4NGOs",
+      "year": "In Progress",
+      "details": "Specialized project management methodologies tailored to NGO environments"
+    },
+    {
+      "title": "Six Sigma Yellow Belt",
+      "provider": "Professional Body",
+      "year": "In Progress",
+      "details": "Process improvement, operational efficiency, and error reduction modeling"
+    }
+  ]
+}

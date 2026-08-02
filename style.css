@@ -1,277 +1,526 @@
+/* ==========================================
+   CSS Variables & Foundations
+   ========================================== */
 :root {
-    --glass-bg: rgba(255, 255, 255, 0.07);
-    --glass-border: rgba(255, 255, 255, 0.15);
-    --text-color: #ffffff;
-    --accent-color: #4facfe;
+  --neon-cyan: #00f0ff;
+  --neon-pink: #ff007f;
+  --neon-blue: #007acc;
+  --glass-bg: rgba(18, 18, 30, 0.45);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.37);
+  --text-primary: #e2e8f0;
+  --text-muted: #8e9cae;
+  --font-family-mono: 'Fira Code', 'Courier New', Courier, monospace;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* Hide default cursor to use custom one */
 body {
-    background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-    color: var(--text-color);
-    padding: 20px;
-    min-height: 100vh;
-    overflow-x: hidden;
-    cursor: default;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text-primary);
+  background-color: #0d0d15;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+/* ==========================================
+   Keyboard Accessibility Focus Indicators
+   ========================================== */
+*:focus-visible {
+  outline: 2px solid var(--neon-cyan);
+  outline-offset: 2px;
+  box-shadow: 0 0 10px var(--neon-cyan);
 }
 
-/* --- 1. Custom Glowing Mouse Cursor --- */
-.cursor-dot {
-    width: 8px;
-    height: 8px;
-    background-color: var(--accent-color);
-    position: fixed;
-    top: 0;
-    left: 0;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    box-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color);
+/* ==========================================
+   Moving Gradient Background (Performant)
+   ========================================== */
+.bg-gradient-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background: linear-gradient(135deg, #0f0c1b, #201335, #0a1128, #18092a);
+  background-size: 400% 400%;
+  animation: movingGradient 18s ease infinite;
+  will-change: background-position;
 }
 
-.cursor-outline {
-    width: 35px;
-    height: 35px;
-    border: 2px solid rgba(79, 172, 254, 0.5);
-    position: fixed;
-    top: 0;
-    left: 0;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9998;
+@keyframes movingGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* --- 2. Glassmorphism Panels --- */
-.glass-panel {
-    background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    padding: 40px;
-    margin-bottom: 30px;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+/* ==========================================
+   Hardware-Accelerated Custom Cursor Tracking
+   ========================================== */
+.custom-cursor {
+  width: 12px;
+  height: 12px;
+  background: var(--neon-cyan);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform;
 }
 
-/* --- 3. Navigation Bar --- */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
+.custom-cursor-glow {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--neon-pink);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9998;
+  box-shadow: 0 0 15px var(--neon-pink);
+  will-change: transform;
 }
 
-.logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    background: linear-gradient(135deg, #ffffff 0%, var(--accent-color) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+/* Hover state expansion */
+.hover-active .custom-cursor {
+  transform: scale(1.6);
+  background-color: var(--neon-pink);
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
+.hover-active .custom-cursor-glow {
+  transform: scale(1.3);
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 20px var(--neon-cyan);
 }
 
-nav a {
-    color: var(--text-color);
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
+/* ==========================================
+   Glassmorphism VS Code Window Layout
+   ========================================== */
+.vscode-window {
+  width: 92vw;
+  height: 88vh;
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: var(--glass-shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
 }
 
-nav a:hover {
-    color: var(--accent-color);
+/* Window Title Bar */
+.vscode-titlebar {
+  background: rgba(10, 10, 18, 0.6);
+  height: 40px;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--glass-border);
+  font-size: 13px;
+  color: var(--text-muted);
 }
 
-/* --- 4. Hero Section & Profile Image --- */
-.hero {
-    text-align: center;
-    padding: 60px 20px;
+.window-controls {
+  display: flex;
+  gap: 8px;
 }
 
-.profile-img {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 0 25px rgba(79, 172, 254, 0.4);
-    margin-bottom: 20px;
-    animation: float 4s ease-in-out infinite;
+.window-controls .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+.close { background: #ff5f56; }
+.minimize { background: #ffbd2e; }
+.maximize { background: #27c93f; }
+
+.hamburger-menu-btn {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
 }
 
-.hero h1 {
-    font-size: 2.8rem;
-    margin-bottom: 10px;
+/* Main Workspace Grid */
+.vscode-workspace {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
 }
 
-.subtitle {
-    font-size: 1.1rem;
-    color: #b0c4de;
+/* Activity Bar (Far Left Side) */
+.vscode-activitybar {
+  width: 55px;
+  background: rgba(10, 10, 15, 0.7);
+  border-right: 1px solid var(--glass-border);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
 }
 
-/* --- 5. Beautiful Headings & Subheadings --- */
-.glass-panel h2 {
-    font-size: 2rem;
-    margin-bottom: 25px;
-    background: linear-gradient(135deg, #ffffff 0%, var(--accent-color) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    position: relative;
-    display: inline-block;
+.activity-icon {
+  font-size: 22px;
+  color: var(--text-muted);
+  margin-bottom: 25px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  position: relative;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: center;
 }
 
-/* Neon Glowing Underline for Headings */
-.glass-panel h2::after {
-    content: '';
+.activity-icon:hover, 
+.activity-icon:focus-visible, 
+.activity-icon.active {
+  color: var(--neon-cyan);
+  text-shadow: 0 0 8px var(--neon-cyan);
+}
+
+/* Corrected pseudo-element alignment */
+.activity-icon.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10%;
+  width: 3px;
+  height: 80%;
+  background: var(--neon-cyan);
+  box-shadow: 0 0 8px var(--neon-cyan);
+}
+
+/* Sidebar Explorer Panel */
+.vscode-sidebar {
+  width: 240px;
+  background: rgba(15, 15, 25, 0.4);
+  border-right: 1px solid var(--glass-border);
+  font-size: 14px;
+}
+
+.sidebar-title {
+  padding: 12px 18px;
+  font-weight: 600;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+  letter-spacing: 1px;
+}
+
+.explorer-section {
+  user-select: none;
+}
+
+.explorer-header {
+  padding: 8px 18px;
+  font-weight: bold;
+  font-size: 12px;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.file-list {
+  list-style: none;
+}
+
+.file-item {
+  padding: 8px 24px;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.2s, color 0.2s;
+  border-left: 2px solid transparent;
+}
+
+.file-item:hover, 
+.file-item:focus-visible, 
+.file-item.active {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+}
+
+.file-item.active {
+  border-left: 2px solid var(--neon-cyan);
+}
+
+/* Sidebar File Icon Styling Colors */
+.md-icon { color: #519aba; }
+.css-icon { color: #ff007f; }
+.js-icon { color: #f1e05a; }
+.json-icon { color: #cbcb41; }
+.contact-icon { color: #4caf50; }
+
+/* Editor Main Area */
+.vscode-editor-pane {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: rgba(18, 18, 28, 0.2);
+  overflow: hidden;
+}
+
+/* Navigation Tab Bar */
+.editor-tabs-bar {
+  display: flex;
+  background: rgba(10, 10, 15, 0.5);
+  border-bottom: 1px solid var(--glass-border);
+  overflow-x: auto;
+}
+
+.editor-tab {
+  padding: 10px 18px;
+  background: rgba(15, 15, 22, 0.4);
+  border-right: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-muted);
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 2px solid transparent;
+}
+
+.editor-tab.active {
+  background: rgba(25, 25, 35, 0.35);
+  color: var(--neon-cyan);
+  border-bottom: 2px solid var(--neon-cyan);
+  box-shadow: 0 4px 10px -2px rgba(0, 240, 255, 0.2);
+}
+
+.tab-close {
+  font-size: 10px;
+  border-radius: 50%;
+  padding: 2px;
+  transition: background 0.2s;
+}
+
+.tab-close:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--neon-pink);
+}
+
+/* Code Content Layout */
+.editor-content-viewport {
+  flex: 1;
+  display: flex;
+  padding: 20px 10px;
+  overflow-y: auto;
+  font-family: var(--font-family-mono);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.line-numbers {
+  text-align: right;
+  padding-right: 15px;
+  color: #3b4252;
+  user-select: none;
+  border-right: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.editor-code-container {
+  padding-left: 20px;
+  flex: 1;
+  color: var(--text-primary);
+  outline: none;
+}
+
+/* ==========================================
+   Code Styling & Syntax Highlighting
+   ========================================== */
+.code-comment { color: #6272a4; font-style: italic; }
+.code-keyword { color: var(--neon-pink); font-weight: bold; }
+.code-string { color: #a6e22e; }
+.code-class { color: var(--neon-cyan); }
+.code-variable { color: #f8f8f2; }
+.code-number { color: #ae81ff; }
+
+/* Visual Profile Floating Frame Inside Markdown */
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(5px);
+}
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid var(--neon-cyan);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+  animation: floatAvatar 4s ease-in-out infinite;
+  background-size: cover;
+  background-position: center;
+}
+
+@keyframes floatAvatar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.markdown-view h1 {
+  font-size: 26px;
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--neon-cyan);
+  padding-bottom: 8px;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+}
+
+.markdown-view h2 {
+  font-size: 20px;
+  color: var(--neon-pink);
+  margin-top: 25px;
+  margin-bottom: 12px;
+}
+
+.markdown-view ul {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.markdown-view li {
+  margin-bottom: 6px;
+}
+
+/* Custom Contact Shell Input */
+.terminal-input-line {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.prompt { color: var(--neon-cyan); }
+.command-text { color: var(--text-primary); }
+
+.contact-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  margin: 10px 10px 10px 0;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--neon-cyan);
+  border-radius: 4px;
+  color: var(--text-primary);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.contact-button:hover,
+.contact-button:focus-visible {
+  background: var(--neon-cyan);
+  color: #000;
+  box-shadow: 0 0 15px var(--neon-cyan);
+}
+
+/* Status Bar */
+.vscode-statusbar {
+  height: 25px;
+  background: rgba(5, 5, 10, 0.8);
+  border-top: 1px solid var(--glass-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: var(--text-muted);
+  padding: 0 15px;
+}
+
+.status-left, .status-right {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.bg-neon-accent {
+  background: rgba(0, 240, 255, 0.2);
+  color: var(--neon-cyan);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+/* ==========================================
+   Responsive Styling (Mobiles & Tablets)
+   ========================================== */
+@media (max-width: 900px) {
+  .vscode-sidebar {
     position: absolute;
-    left: 0;
-    bottom: -8px;
-    width: 45px;
-    height: 3px;
-    background: var(--accent-color);
-    border-radius: 2px;
-    box-shadow: 0 0 10px var(--accent-color);
-}
+    left: -240px;
+    top: 40px;
+    height: calc(100% - 65px);
+    z-index: 10;
+    transition: left 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    background: rgba(15, 15, 25, 0.95);
+    backdrop-filter: blur(25px);
+  }
 
-p {
-    line-height: 1.7;
-    color: #d1d5db;
-    font-size: 1.05rem;
-}
+  .vscode-sidebar.active {
+    left: 55px;
+  }
 
-/* --- 6. Poetry / Philosophy Quote --- */
-.poetry-quote {
-    margin-top: 25px;
-    padding-left: 20px;
-    border-left: 4px solid var(--accent-color);
-    font-style: italic;
-    color: #e5e7eb;
-}
-
-.poetry-quote span {
-    font-size: 0.9rem;
-    color: #9ca3af;
+  .hamburger-menu-btn {
     display: block;
-    margin-top: 8px;
+  }
 }
 
-/* --- 7. Grid Layout & Cards for Case Studies --- */
-.grid-layout {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-top: 20px;
-}
-
-.card {
-    background: rgba(255, 255, 255, 0.04);
-    padding: 25px;
-    border-radius: 14px;
-    border: 1px solid var(--glass-border);
-    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-6px);
-    background: rgba(255, 255, 255, 0.09);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}
-
-.card h3 {
-    color: var(--accent-color);
-    margin-bottom: 12px;
-    font-size: 1.3rem;
-}
-
-/* --- 8. Contact Button --- */
-.contact-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 28px;
-    background: linear-gradient(135deg, #4facfed5 0%, #00f2fece 100%);
-    color: #0f2027;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 30px;
-    box-shadow: 0 0 15px rgba(79, 172, 254, 0.4);
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.contact-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(79, 172, 254, 0.8);
-}
-
-/* --- 9. Animations & Mobile Hamburger Setup --- */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.fade-in.appear {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.menu-toggle {
+@media (max-width: 600px) {
+  body {
+    padding: 0;
+  }
+  .vscode-window {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    border: none;
+  }
+  .vscode-activitybar {
+    width: 45px;
+  }
+  .vscode-sidebar {
+    width: 200px;
+  }
+  .vscode-sidebar.active {
+    left: 45px;
+  }
+  .editor-content-viewport {
+    font-size: 13px;
+    padding: 10px 5px;
+  }
+  .line-numbers {
     display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-}
-
-.menu-toggle span {
-    width: 25px;
-    height: 3px;
-    background-color: var(--text-color);
-    transition: 0.3s;
-    border-radius: 5px;
-}
-
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
-    }
-    
-    nav {
-        flex-wrap: wrap;
-    }
-
-    nav ul {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-        margin-top: 20px;
-        gap: 15px;
-    }
-
-    nav ul.active {
-        display: flex;
-    }
+ /* Inside style.css, append this rule under the "Sidebar File Icon Styling Colors" section: */
+.edu-icon { color: #e06c75; } }
 }
