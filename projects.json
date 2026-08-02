@@ -1,0 +1,144 @@
+{
+  "profile": {
+    "name": "Younus Ali",
+    "title": "Operations & Program Support Specialist",
+    "subtitles": [
+      "Operations & Program Support",
+      "Verification & Process Coordination",
+      "Process Automation Specialist",
+      "Community Development"
+    ],
+    "intro": "I run verification case operations end-to-end and build the AI-powered tools that make them faster — while carrying a background in community development and climate-resilience work from Gilgit-Baltistan.",
+    "contact": {
+      "phone": "+92 305 343 5324",
+      "email": "aliunus926@gmail.com",
+      "linkedin": "linkedin.com/in/aliunus",
+      "location": "Islamabad / Rawalpindi, Pakistan"
+    }
+  },
+  "competencies": {
+    "operations": ["Case Management & Verification", "Workflow Automation", "SOP / Technical Writing", "Process Improvement", "Compliance & Data Confidentiality"],
+    "program_ngo": ["Community Development", "Needs Assessment", "Monitoring & Evaluation (M&E)", "Stakeholder Engagement", "Climate Resilience & DRR"],
+    "coordination": ["Cross-Functional Coordination", "Remote Team & Freelancer Management", "Project Coordination", "Vendor Sourcing"],
+    "research_data": ["Qualitative & Quantitative Research", "Policy Analysis", "Google Sheets (Dashboards, Tracking)", "Data Reporting"],
+    "ai_tools": ["ChatGPT (Prompt Engineering & Workflows)", "DeepSeek", "LinkedIn Sourcing", "Canva"]
+  },
+  "experience": [
+    {
+      "role": "Assistant Operations Support",
+      "company": "De RISC Group",
+      "location": "Islamabad, Pakistan",
+      "period": "Oct 2025 - Present",
+      "responsibilities": [
+        "Initiate and manage partner verification cases end-to-end, reviewing candidate information and documents under strict data-confidentiality standards.",
+        "Maintain real-time case tracking dashboards in Google Sheets, ensuring on-time progression against turnaround deadlines.",
+        "Primary liaison between Operations and Management on case status, feasibility, and escalations.",
+        "Source, onboard, and brief freelance verification agents across low-coverage global regions via LinkedIn and professional networks."
+      ],
+      "key_achievements": [
+        "Built a ChatGPT assistant that automates task instructions and briefing documents, cutting manual prep time per case.",
+        "Designed a DeepSeek-based sourcing assistant that structured 800+ raw freelancer records into a searchable database.",
+        "Reactivated 30–40 dormant high-value freelancers through advanced web research and contact-discovery methods."
+      ]
+    },
+    {
+      "role": "Sales Executive",
+      "company": "Baltistan Property Advisors & Construction Company",
+      "location": "Rawalpindi, Pakistan",
+      "period": "Dec 2023 - Aug 2025",
+      "responsibilities": [
+        "Managed end-to-end property sales operations and a portfolio of active client relationships.",
+        "Generated qualified leads through targeted social media and public-awareness campaigns."
+      ],
+      "key_achievements": [
+        "Closed approximately 5 million PKR in property sales in 2024."
+      ]
+    },
+    {
+      "role": "Public Relations Assistant",
+      "company": "Gilgit Baltistan Rural Support Program (GBRSP)",
+      "location": "Gilgit-Baltistan, Pakistan",
+      "period": "Apr 2021 - Sep 2021",
+      "responsibilities": [
+        "Supported community-driven programs in social uplift, youth empowerment, and climate resilience across Gilgit-Baltistan.",
+        "Conducted community needs assessments, including population data estimation.",
+        "Contributed to the Glacial Lake Outburst Flood (GLOF) disaster-risk-reduction project, supporting climate adaptation planning.",
+        "Liaised between project teams, local communities, indigenous organizations, and government bodies."
+      ],
+      "key_achievements": []
+    },
+    {
+      "role": "Volunteer Teacher",
+      "company": "Siksa Student Welfare Organization",
+      "location": "Khapalu, Pakistan",
+      "period": "Jul 2020 - Aug 2021",
+      "responsibilities": [
+        "Designed and delivered structured lesson plans for elementary students in core subjects.",
+        "Collaborated with local educators to promote access to education in an underserved community."
+      ],
+      "key_achievements": []
+    }
+  ],
+  "achievements": [
+    { "value": "800+", "label": "Freelancer Records Structured Into A Searchable Database" },
+    { "value": "30-40", "label": "Dormant Freelancers Reactivated" },
+    { "value": "5M PKR", "label": "In Property Sales Closed (2024)" },
+    { "value": "4", "label": "Languages Spoken Fluently — English (Advanced), Urdu (Native), Balti (Native), Punjabi (Intermediate)" }
+  ],
+  "tools": [
+    {
+      "title": "Briefing & Task-Instruction Assistant",
+      "stack": "ChatGPT · Workflow Automation",
+      "description": "An internal ChatGPT-powered assistant that generates task instructions, verification protocols, and freelancer briefing documents on demand — replacing manual drafting for every new case.",
+      "impact": "Significantly reduced manual prep time per verification case."
+    },
+    {
+      "title": "Freelancer Sourcing Database",
+      "stack": "DeepSeek · Data Structuring",
+      "description": "A DeepSeek-based assistant that converted 800+ raw, unstructured freelancer records into a clean, searchable database — organized by region and coverage gap.",
+      "impact": "Accelerated source identification across hard-to-cover regions."
+    }
+  ],
+  "education": [
+    {
+      "degree": "Governance and Public Policy",
+      "institution": "National Defence University",
+      "location": "Islamabad",
+      "period": "2020 - 2024",
+      "details": "Relevant: Public Administration, Policy Analysis, Research Methods, Community Development"
+    },
+    {
+      "degree": "Engineering Science",
+      "institution": "Scienta Vision College",
+      "location": "Rawalpindi",
+      "period": "2017 - 2019",
+      "details": "Pre-Engineering academic foundation"
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Claude 101 — Introduction to AI with Claude",
+      "provider": "Anthropic",
+      "year": "2025",
+      "details": "Practical AI usage, prompt engineering & responsible AI workflows"
+    },
+    {
+      "title": "Google Project Management Certificate",
+      "provider": "Coursera",
+      "year": "In Progress",
+      "details": "Professional program covering Agile, Scrum, and project delivery frameworks"
+    },
+    {
+      "title": "PMD Pro (Project Management for Development Professionals)",
+      "provider": "PM4NGOs",
+      "year": "In Progress",
+      "details": "Specialized project management methodologies tailored to NGO environments"
+    },
+    {
+      "title": "Six Sigma Yellow Belt",
+      "provider": "Professional Body",
+      "year": "In Progress",
+      "details": "Process improvement, operational efficiency, and error reduction modeling"
+    }
+  ]
+}
