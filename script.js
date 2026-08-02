@@ -3,7 +3,7 @@ let appData = null;
 let activeFile = 'about';
 const openTabs = ['about'];
 
-// Configuration for virtual explorer documents (Including new Education.json)
+// Configuration for virtual explorer documents (Including Education.json)
 const staticFiles = {
   about: { title: 'About_Me.md', iconClass: 'fab fa-markdown md-icon' },
   skills: { title: 'Skills.css', iconClass: 'fab fa-css3-alt css-icon' },
@@ -237,7 +237,7 @@ function renderContent() {
       htmlMarkup = `
         <article class="markdown-view">
           <div class="profile-card">
-            <div class="profile-avatar" style="background-image: url('https://placehold.co/150/00f0ff/0d0d15?text=YA')" aria-label="Younus Ali profile image"></div>
+            <div class="profile-avatar" aria-label="Younus Ali profile image">YA</div>
             <div>
               <h1 style="border: none; padding-bottom: 0; margin-bottom: 5px;">${appData.profile.name}</h1>
               <p style="color: var(--neon-cyan);">${appData.profile.title}</p>
