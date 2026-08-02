@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Younus Ali | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Custom Glowing Mouse Cursor -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <!-- Animated Background -->
+    <div class="background-animation"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="glass-panel">
+        <h2 class="logo">YA.</h2>
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul id="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Operations & Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header / Hero Section -->
+    <header class="glass-panel hero fade-in">
+        <img src="profile.png" alt="Younus Ali" class="profile-img">
+        <h1>Younus Ali</h1>
+        <p class="subtitle">Global Verification & Compliance Operations</p>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="glass-panel fade-in">
+        <h2>About Me</h2>
+        <p>I specialize in managing complex, international verification cases and sourcing localized field agents across the globe. By establishing strict compliance protocols and standardized workflows, I ensure seamless global site visits and accurate data processing.</p>
+        
+        <blockquote class="poetry-quote">
+            "Speak, for your lips are free; <br>
+            Speak, your tongue is still your own." <br>
+            <span>— A reminder of the power of truth and verification.</span>
+        </blockquote>
+    </section>
+
+    <!-- Case Studies / Operations Section -->
+    <section id="work" class="glass-panel fade-in">
+        <h2>Case Studies & Operations</h2>
+        <div id="projects-container" class="grid-layout">
+            <!-- Dynamically loaded from projects.json -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="glass-panel fade-in">
+        <h2>Get In Touch</h2>
+        <p>Interested in collaborating or discussing global verification strategies? Reach out directly to connect.</p>
+        <a href="mailto:your-email@example.com" class="contact-btn">Send an Email</a>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

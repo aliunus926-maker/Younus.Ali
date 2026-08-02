@@ -1,0 +1,277 @@
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.07);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --text-color: #ffffff;
+    --accent-color: #4facfe;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Hide default cursor to use custom one */
+body {
+    background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: var(--text-color);
+    padding: 20px;
+    min-height: 100vh;
+    overflow-x: hidden;
+    cursor: default;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* --- 1. Custom Glowing Mouse Cursor --- */
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    box-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color);
+}
+
+.cursor-outline {
+    width: 35px;
+    height: 35px;
+    border: 2px solid rgba(79, 172, 254, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+}
+
+/* --- 2. Glassmorphism Panels --- */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* --- 3. Navigation Bar --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #ffffff 0%, var(--accent-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+/* --- 4. Hero Section & Profile Image --- */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 25px rgba(79, 172, 254, 0.4);
+    margin-bottom: 20px;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #b0c4de;
+}
+
+/* --- 5. Beautiful Headings & Subheadings --- */
+.glass-panel h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    background: linear-gradient(135deg, #ffffff 0%, var(--accent-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    display: inline-block;
+}
+
+/* Neon Glowing Underline for Headings */
+.glass-panel h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 45px;
+    height: 3px;
+    background: var(--accent-color);
+    border-radius: 2px;
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+p {
+    line-height: 1.7;
+    color: #d1d5db;
+    font-size: 1.05rem;
+}
+
+/* --- 6. Poetry / Philosophy Quote --- */
+.poetry-quote {
+    margin-top: 25px;
+    padding-left: 20px;
+    border-left: 4px solid var(--accent-color);
+    font-style: italic;
+    color: #e5e7eb;
+}
+
+.poetry-quote span {
+    font-size: 0.9rem;
+    color: #9ca3af;
+    display: block;
+    margin-top: 8px;
+}
+
+/* --- 7. Grid Layout & Cards for Case Studies --- */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.04);
+    padding: 25px;
+    border-radius: 14px;
+    border: 1px solid var(--glass-border);
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.09);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.card h3 {
+    color: var(--accent-color);
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+/* --- 8. Contact Button --- */
+.contact-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #4facfed5 0%, #00f2fece 100%);
+    color: #0f2027;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    box-shadow: 0 0 15px rgba(79, 172, 254, 0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.contact-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(79, 172, 254, 0.8);
+}
+
+/* --- 9. Animations & Mobile Hamburger Setup --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    
+    nav {
+        flex-wrap: wrap;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+        gap: 15px;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+}
